@@ -117,7 +117,7 @@ extension DoriFrontend {
                             } else {
                                 nil
                             }
-                        }.reduce(into: [:]) { (dict, pair: (key: DoriAPI.Event.PreviewEvent, value: Int)) in
+                        }.reduce(into: [:]) { (dict, pair: (key: DoriAPI.Events.PreviewEvent, value: Int)) in
                             // Swift says the types are too complex
                             // so we have to annotate the type
                             // of `pair` explicitly.

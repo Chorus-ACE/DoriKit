@@ -20,7 +20,7 @@ public protocol TitleDescribable {
     var title: LocalizedData<String> { get }
 }
 
-extension Bands: TitleDescribable {
+extension Band: TitleDescribable {
     @inlinable
     public var title: DoriAPI.LocalizedData<String> {
         self.bandName
@@ -39,7 +39,7 @@ extension Card: TitleDescribable {
         self.prefix
     }
 }
-extension ExtendedCards: TitleDescribable {
+extension ExtendedCard: TitleDescribable {
     public var title: DoriAPI.LocalizedData<String> {
         self.card.prefix
     }
@@ -63,14 +63,14 @@ extension Character: TitleDescribable {
         self.characterName
     }
 }
-extension ExtendedCharacters: TitleDescribable {
+extension ExtendedCharacter: TitleDescribable {
     @inlinable
     public var title: DoriAPI.LocalizedData<String> {
         self.character.characterName
     }
 }
 
-extension Comics: TitleDescribable {}
+extension Comic: TitleDescribable {}
 
 extension PreviewCostume: TitleDescribable {
     @inlinable

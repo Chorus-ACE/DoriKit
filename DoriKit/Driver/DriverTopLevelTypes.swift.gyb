@@ -63,43 +63,43 @@ extension RecentNewsItems {
 
 // MARK: Types with preview
 %{
-    baseNames = ["Costumes", "Events", "Gachas", "Songs"]
+    baseNames = ["Costume", "Event", "Gacha", "Song"]
 }%
 % for baseName in baseNames:
-public typealias ${baseName} = DoriAPI.${baseName}.${baseName}
-public typealias Preview${baseName} = DoriAPI.${baseName}.Preview${baseName}
+public typealias ${baseName} = DoriAPI.${baseName}s.${baseName}
+public typealias Preview${baseName} = DoriAPI.${baseName}s.Preview${baseName}
 
 extension ${baseName} {
     @inlinable
     public static func all() async -> [Preview${baseName}]? {
-        await DoriFrontend.${baseName}.list()
+        await DoriFrontend.${baseName}s.list()
     }
 }
 extension Preview${baseName} {
     @inlinable
     public static func all() async -> [Self]? {
-        await DoriFrontend.${baseName}.list()
+        await DoriFrontend.${baseName}s.list()
     }
 }
 % end
 
 // MARK: Types without preview
 %{
-    baseNames = ["Bands", "Comics", "Degrees", "Skills", "MiracleTickets"]
+    baseNames = ["Band", "Comic", "Degree", "Skill", "MiracleTicket"]
 }%
 % for baseName in baseNames:
-public typealias ${baseName} = DoriAPI.${baseName}.${baseName}
+public typealias ${baseName} = DoriAPI.${baseName}s.${baseName}
 
 extension ${baseName} {
     @inlinable
     public static func all() async -> [Self]? {
-        await DoriAPI.${baseName}.all()
+        await DoriAPI.${baseName}s.all()
     }
 }
 % end
 
 // MARK: Band
-extension Bands {
+extension Band {
     @inlinable
     public static func main() async -> [Self]? {
         await DoriAPI.Bands.main()
@@ -181,10 +181,10 @@ public typealias DoriSearchable = DoriFrontend.Searchable
 public typealias DoriURLValidator = DoriFrontend.URLValidator
 
 %{
-    baseNames = ["Cards", "Characters", "Costumes", "Events", "Gachas", "Songs"]
+    baseNames = ["Card", "Character", "Costume", "Event", "Gacha", "Song"]
 }%
 % for baseName in baseNames:
-public typealias Extended${baseName} = DoriFrontend.${baseName}.Extended${baseName}
+public typealias Extended${baseName} = DoriFrontend.${baseName}s.Extended${baseName}
 % end
 
 public typealias CardWithBand = DoriFrontend.Cards.CardWithBand
@@ -231,7 +231,7 @@ public typealias ExtendedMiracleTicket = DoriFrontend.MiracleTickets.ExtendedMir
 extension ExtendedMiracleTicket {
     @inlinable
     public static func all() async -> [Self]? {
-        await DoriFrontend.MiracleTicket.extendedList()
+        await DoriFrontend.MiracleTickets.extendedList()
     }
 }
 

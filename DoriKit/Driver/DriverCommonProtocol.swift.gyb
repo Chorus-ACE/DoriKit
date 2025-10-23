@@ -25,6 +25,7 @@ public protocol GettableByID {
 }%
 % for baseName in baseNames:
 extension ${baseName}: GettableByID {}
+% end
 
 // MARK: - ListGettable
 public protocol ListGettable {
@@ -36,6 +37,7 @@ public protocol ListGettable {
 }%
 % for baseName in baseNames:
 extension ${baseName}: ListGettable {}
+% end
 
 extension CardWithBand: ListGettable {
     @inlinable
@@ -56,6 +58,7 @@ public protocol PreviewConvertible {
 }%
 % for baseName in baseNames:
 extension ${baseName}: PreviewConvertible {}
+% end
 
 extension Character: PreviewConvertible {
     public typealias PreviewType = PreviewCharacter
@@ -69,19 +72,11 @@ public protocol FullTypeConvertible {
 }
 
 %{
-    baseNames = ["Card", "Costume", "Event", "Gacha", "LoginCampaign", "Song"]
+    baseNames = ["Card", "Character", "Costume", "Event", "Gacha", "LoginCampaign", "Song"]
 }%
 % for baseName in baseNames:
-extension ${baseName}: PreviewConvertible {}
-
-
-extension PreviewCard: FullTypeConvertible {}
-extension PreviewCharacter: FullTypeConvertible {}
-extension PreviewCostume: FullTypeConvertible {}
-extension PreviewEvent: FullTypeConvertible {}
-extension PreviewGacha: FullTypeConvertible {}
-extension PreviewLoginCampaign: FullTypeConvertible {}
-extension PreviewSong: FullTypeConvertible {}
+extension Preview${baseName}: FullTypeConvertible {}
+% end
 
 // MARK: - ExtendedTypeConvertible
 public protocol ExtendedTypeConvertible {
@@ -98,3 +93,4 @@ extension Preview${baseName}: ExtendedTypeConvertible {
 extension ${baseName}: ExtendedTypeConvertible {
     public typealias ExtendedType = Extended${baseName}
 }
+% end

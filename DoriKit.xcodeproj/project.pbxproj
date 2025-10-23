@@ -285,7 +285,7 @@
 		8C2CCD4E2E3E67AC0014189F /* RichContentRendering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichContentRendering.swift; sourceTree = "<group>"; };
 		8C2CCD502E3F0D820014189F /* PagedContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagedContent.swift; sourceTree = "<group>"; };
 		8C2EE3AA2E70498800EDDD0D /* libgit2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgit2.a; path = "../../../Library/Developer/Xcode/DerivedData/Greatdori-aghqtexjlhuxqfcowlzrriajcttj/Build/Products/Debug/libgit2.a"; sourceTree = "<group>"; };
-		8C320FB02E8C1230002D183A /* DriverCommonProtocol.swift.gyb */ = {isa = PBXFileReference; lastKnownFileType = text; path = DriverCommonProtocol.swift.gyb; sourceTree = "<group>"; };
+		8C320FB02E8C1230002D183A /* DriverCommonProtocol.swift.gyb */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = DriverCommonProtocol.swift.gyb; sourceTree = "<group>"; };
 		8C3264032E3B75FF00081F4F /* PreCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreCache.swift; sourceTree = "<group>"; };
 		8C3264052E3C69C000081F4F /* FrontendGacha.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontendGacha.swift; sourceTree = "<group>"; };
 		8C32F31B2E8D61E9002D183A /* NetworkCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCache.swift; sourceTree = "<group>"; };
