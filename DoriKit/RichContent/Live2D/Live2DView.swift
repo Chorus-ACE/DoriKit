@@ -561,6 +561,8 @@ private func setupWebView(
                 \(env.l2dVSyncEnabled ? {
                 #if os(macOS)
                 let fps = NSScreen.main?.maximumFramesPerSecond ?? 120
+                #elseif os(visionOS)
+                let fps = 90
                 #else
                 let fps = UIScreen.main.maximumFramesPerSecond
                 #endif

@@ -14,10 +14,6 @@
 
 import Foundation
 
-#if !os(watchOS)
-import WebKit
-#endif
-
 extension DoriFrontend {
     /// Request and fetch data about costume in Bandori.
     ///
@@ -93,6 +89,7 @@ extension DoriFrontend {
         }
         
         #if os(watchOS)
+        @available(*, deprecated, message: "Do not use this function")
         public static func live2dViewer(for id: Int) -> NSObject {
             dlopen("/System/Library/Frameworks/WebKit.framework/WebKit", RTLD_NOW)
             let webView = (NSClassFromString("WKWebView") as! NSObject.Type).init()
