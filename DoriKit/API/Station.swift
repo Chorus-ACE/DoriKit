@@ -392,11 +392,11 @@ extension DoriAPI {
             let heartBeatTask = Task {
                 do {
                     repeat {
+                        try await Task.sleep(for: .seconds(30))
+                        
                         if Task.isCancelled {
                             return
                         }
-                        
-                        try await Task.sleep(for: .seconds(30))
                         
                         runLoopContinuation.withLock {
                             $0?.resume(returning: .heartBeatTimeout)

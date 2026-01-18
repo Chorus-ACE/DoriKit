@@ -6,7 +6,7 @@ import CompilerPluginSupport
 
 let package = Package(
     name: "DoriKit",
-    platforms: [.iOS(.v17), .macCatalyst(.v17), .macOS(.v14), .visionOS(.v1), .watchOS(.v10)],
+    platforms: [.iOS(.v17), .macCatalyst(.v17), .macOS(.v14), .visionOS("1.1"), .watchOS(.v10)],
     products: [
         .library(name: "DoriKit", type: .dynamic, targets: ["DoriKit"])
     ],
