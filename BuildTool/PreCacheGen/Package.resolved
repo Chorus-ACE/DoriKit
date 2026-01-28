@@ -12,10 +12,10 @@
     {
       "identity" : "bluecryptor",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Kitura/BlueCryptor.git",
+      "location" : "https://github.com/WindowsMEMZ/BlueCryptor.git",
       "state" : {
-        "revision" : "cec97c24b111351e70e448972a7d3fe68a756d6d",
-        "version" : "2.0.2"
+        "branch" : "master",
+        "revision" : "5fb15d1443f43242f98e8230851713c3b5b179ea"
       }
     },
     {
@@ -23,8 +23,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Kitura/BlueECC.git",
       "state" : {
-        "revision" : "1485268a54f8135435a825a855e733f026fa6cc8",
-        "version" : "1.2.201"
+        "branch" : "master",
+        "revision" : "e5faf7ce81c762ed8e266e35ad6c00cc5bfccf52"
       }
     },
     {
@@ -156,10 +156,10 @@
     {
       "identity" : "swift-jwt",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Kitura/Swift-JWT",
+      "location" : "https://github.com/WindowsMEMZ/Swift-JWT",
       "state" : {
-        "revision" : "2cf7ef3eeb0df84318c75662c257651285f8289f",
-        "version" : "4.0.2"
+        "branch" : "master",
+        "revision" : "82c3fa5f81648f38743702243e9fe94f28df768b"
       }
     },
     {
@@ -232,6 +232,15 @@
       "state" : {
         "revision" : "af76cf3ef710b6ca5f8c05f3a31307d44a3c5828",
         "version" : "5.0.2"
+      }
+    },
+    {
+      "identity" : "symbolavailability",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/WindowsMEMZ/SymbolAvailability",
+      "state" : {
+        "revision" : "0d0073518e6146328b01e149e0b53f0c9ad52203",
+        "version" : "1.0.0"
       }
     }
   ],
