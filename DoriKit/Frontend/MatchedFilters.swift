@@ -411,7 +411,7 @@ extension DoriFrontend.Costumes.PreviewCostume: DoriFrontend.Filterable {
     public func _matches<ValueType>(_ value: ValueType, withCache cache: DoriFrontend._FilterCache?) -> Bool? {
         if let band = value as? DoriFrontend.Filter.FullBand { // Band - Full
             guard let characters = cache?.charactersList else {
-                unsafe os_log("[Filter][Costume] Found `nil` while trying to read characters cache.")
+                logger.error("Costume filter found `nil` while trying to read characters cache.")
                 return nil
             }
             return band.rawValue == characters.first(where: { $0.id == self.characterID })?.bandID
