@@ -48,6 +48,29 @@ extension DoriFrontend {
             guard let meta = groupResult.0 else { return nil }
             guard let songs = groupResult.1 else { return nil }
             
+            return _allMeta(
+                meta,
+                songs,
+                with: skill,
+                in: locale,
+                skillLevel: skillLevel,
+                perfectRate: perfectRate,
+                downtime: downtime,
+                fever: fever,
+                sort: sort
+            )
+        }
+        public static func _allMeta(
+            _ meta: DoriAPI.Songs.SongMeta,
+            _ songs: [DoriAPI.Songs.PreviewSong],
+            with skill: DoriAPI.Skills.Skill,
+            in locale: DoriAPI.Locale,
+            skillLevel: Int,
+            perfectRate: Double,
+            downtime: Double,
+            fever: Bool,
+            sort: MetaSort
+        ) -> [SongWithMeta]? {
             var result = [SongWithMeta]()
             
             for song in songs {
