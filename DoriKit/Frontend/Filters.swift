@@ -158,6 +158,12 @@ extension DoriFrontend {
         
         /// Set the filter to initial selections.
         public mutating func clearAll() {
+            // Many 'store()' will be called by didset,
+            // we remove 'recoveryID' temporarily to prevent it being
+            // stored continuously, which is useless and heavy
+            let rid = self.recoveryID
+            self.recoveryID = nil
+            
             band = .init(Band.allCases)
             bandMatchesOthers = .includeOthers
             attribute = .init(Attribute.allCases)
@@ -176,6 +182,9 @@ extension DoriFrontend {
             level = nil
             skill = nil
             timelineStatus = .init(TimelineStatus.allCases)
+            
+            self.recoveryID = consume rid
+            store()
         }
         
         private static let _storageLock = NSLock()
