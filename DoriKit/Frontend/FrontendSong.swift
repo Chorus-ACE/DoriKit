@@ -136,7 +136,7 @@ extension DoriFrontend {
                         switch type {
                         case .score, .scoreOverLife, .scoreUnderLife, .scoreContinuedNoteJudge, .scoreUnderGreatHalf:
                             let c = effect.activateEffectValue
-                            var C = Double((m && skill.activationEffect.unificationActivateEffectValue != 0 ? skill.activationEffect.unificationActivateEffectValue : (locale.rawIntValue < c.count ? c[locale.rawIntValue] : c[0])) ?? 0)
+                            var C = Double((m && skill.activationEffect.unificationActivateEffectValue != nil ? skill.activationEffect.unificationActivateEffectValue : (locale.rawIntValue < c.count ? c[locale.rawIntValue] : c[0])) ?? 0)
                             if skill.activationEffect.activateEffectTypes[.scoreRateUpWithPerfect] != nil {
                                 C += 0.5 * min(0, 100) * 1
                             }
@@ -146,14 +146,14 @@ extension DoriFrontend {
                                 r = C / 100
                                 s = -0.5
                             } else if effect.activateCondition == .perfect {
-                                if r != 0 {
+                                if r == 0 {
                                     r = C / 100
                                 }
                             } else {
-                                if r != 0 {
+                                if r == 0 {
                                     r = C / 100
                                 }
-                                if s != 0 {
+                                if s == 0 {
                                     s = C / 100
                                 }
                             }
@@ -167,7 +167,6 @@ extension DoriFrontend {
                 return 1
             }
             
-            let downtime = (downtime.isNaN ? 0 : max(0, downtime)) / 100
             let perfectRate = (perfectRate.isNaN ? 100 : max(0, min(100, perfectRate))) / 100
             let perfectMultiplier = 1.1 * perfectRate + 0.8 * (1 - perfectRate)
             let skillDuration = skill.duration[skillLevel]
