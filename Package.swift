@@ -13,7 +13,11 @@ let package = Package(
     dependencies: [
         .package(url: "https://github.com/Alamofire/Alamofire", from: "5.10.2"),
         .package(url: "https://github.com/SwiftyJSON/SwiftyJSON", from: "5.0.2"),
-        .package(url: "https://github.com/swift-library/swift-gyb", from: "0.0.2"),
+        // The 0.0.2 tag was moved; retain the previously resolved commit.
+        .package(
+            url: "https://github.com/swift-library/swift-gyb",
+            revision: "32a59dbfd4bca6b776490ada8ec6ccc3ad838bbd"
+        ),
         .package(url: "https://github.com/swiftlang/swift-syntax", from: "601.0.1")
     ],
     targets: [
